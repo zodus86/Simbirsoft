@@ -54,6 +54,10 @@ namespace Simbirsoft
             /// 2.2.3 logger for Middleware
             /// </summary>
             app.UseMiddleware<RequestLoggingMiddleware>();
+
+            /// <summary>
+            /// 2.2.4 AuthorizationMiddleware 
+            /// </summary>
             app.UseMiddleware<AuthorizationMiddleware>();
 
             app.UseExceptionHandler(a => a.Run(async context =>
