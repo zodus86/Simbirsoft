@@ -20,9 +20,7 @@ namespace Simbirsoft.Data
         {
             var authorization = context.Request.Query["Basic"];
 
-
-            //https://localhost:5001/api/Book/GetBooks?Basic=admin:admin
-
+            //https://localhost:5001//Book/GetBooks?Basic=admin:admin
             if (authorization != "admin:admin")
             {
                 context.Response.StatusCode = 403;
@@ -32,6 +30,8 @@ namespace Simbirsoft.Data
             {
                 await _next.Invoke(context);
             }
+
+            await _next.Invoke(context);
         }
     }
 }

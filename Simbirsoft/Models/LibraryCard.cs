@@ -1,25 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Simbirsoft.Models
 {
-    /// <summary>
-    /// 2.1 карта библиотеки
-    /// </summary>
     public class LibraryCard
     {
-        public int Id { get; set; }
+        public int PersonId { get; set; }
+        public Person? Person { get; set; }
 
-        [Required]
-        public int HumanId { get; set; }
-
-        [Required]
         public int BookId { get; set; }
+        public Book? Book { get; set; }
 
-        [Required, DataType(DataType.DateTime)]
-        public DateTimeOffset Date { get; set; }
+        public DateTime DateTake { get; set; }
     }
 }
